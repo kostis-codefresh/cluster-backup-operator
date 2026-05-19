@@ -1,4 +1,4 @@
-apiVersion: devopsdayszh.operators.com/v1alpha1
+apiVersion: operators.com/v1alpha1
 kind: Backup
 metadata:
   labels:
