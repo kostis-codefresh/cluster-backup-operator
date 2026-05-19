@@ -1,5 +1,5 @@
 /*
-Copyright 2025.
+Copyright 2026.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import (
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	devopsdayszhv1alpha1 "github.com/rfashwall/cluster-backup-operator/api/v1alpha1"
+	operatorscomv1alpha1 "github.com/rfashwall/cluster-backup-operator/api/v1alpha1"
 )
 
 var _ = Describe("Backup Controller", func() {
@@ -40,13 +40,13 @@ var _ = Describe("Backup Controller", func() {
 			Name:      resourceName,
 			Namespace: "default", // TODO(user):Modify as needed
 		}
-		backup := &devopsdayszhv1alpha1.Backup{}
+		backup := &operatorscomv1alpha1.Backup{}
 
 		BeforeEach(func() {
 			By("creating the custom resource for the Kind Backup")
 			err := k8sClient.Get(ctx, typeNamespacedName, backup)
 			if err != nil && errors.IsNotFound(err) {
-				resource := &devopsdayszhv1alpha1.Backup{
+				resource := &operatorscomv1alpha1.Backup{
 					ObjectMeta: metav1.ObjectMeta{
 						Name:      resourceName,
 						Namespace: "default",
@@ -59,7 +59,7 @@ var _ = Describe("Backup Controller", func() {
 
 		AfterEach(func() {
 			// TODO(user): Cleanup logic after each test, like removing the resource instance.
-			resource := &devopsdayszhv1alpha1.Backup{}
+			resource := &operatorscomv1alpha1.Backup{}
 			err := k8sClient.Get(ctx, typeNamespacedName, resource)
 			Expect(err).NotTo(HaveOccurred())
 

@@ -16,7 +16,6 @@ resources:
     namespaced: true
   controller: true
   domain: operators.com
-  group: devopsdayszh
   kind: Backup
   path: github.com/rfashwall/cluster-backup-operator/api/v1alpha1
   version: v1alpha1
