@@ -5,7 +5,16 @@ metadata:
   name: manager-role
 rules:
 - apiGroups:
-  - backups.cloudnativedays.operators.com
+  - ""
+  - apps
+  - batch
+  resources:
+  - '*'
+  verbs:
+  - get
+  - list
+- apiGroups:
+  - operators.com
   resources:
   - backups
   verbs:
@@ -17,13 +26,13 @@ rules:
   - update
   - watch
 - apiGroups:
-  - backups.cloudnativedays.operators.com
+  - operators.com
   resources:
   - backups/finalizers
   verbs:
   - update
 - apiGroups:
-  - backups.cloudnativedays.operators.com
+  - operators.com
   resources:
   - backups/status
   verbs:
