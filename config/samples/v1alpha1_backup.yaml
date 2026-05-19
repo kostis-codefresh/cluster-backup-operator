@@ -1,9 +1,6 @@
 apiVersion: operators.com/v1alpha1
 kind: Backup
 metadata:
-  labels:
-    app.kubernetes.io/name: cluster-backup-operator
-    app.kubernetes.io/managed-by: kustomize
-  name: backup-sample
+  name: hello-operator
 spec:
-  # TODO(user): Add fields here
+  message: "Hello CloudNativeItaly, this is my first Kubernetes Operator!"
